@@ -1,0 +1,29 @@
+{
+  "box": "ubuntu1204-chef1144",
+  "boxurl": "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vmware/opscode_ubuntu-12.04_chef-provisionerless.box",
+  "recipes": [
+    "haproxy"
+  ],
+  "json": {
+    "haproxy": {
+      "mode": "tcp",
+      "enable_default_http": false,
+      "install_method": "source",
+      "listeners": {
+        "listen": {
+          "rabbitcluster 0.0.0.0:5671": [
+            "mode tcp",
+            "balance roundrobin",
+            "option tcplog"
+          ],
+          "stats :9090": [
+            "balance",
+            "mode http",
+            "stats enable",
+            "stats auth admin:admin"
+          ]
+        }
+      }
+    }
+  }
+}

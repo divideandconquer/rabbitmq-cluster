@@ -1,0 +1,22 @@
+name              'rabbitmq-cluster'
+maintainer        'Kyle Boorky'
+maintainer_email  'kboorky@turbine.com'
+license           'Apache 2.0'
+description       'Vagrant cluster of RabbitMQ and Celery servers'
+long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version           '1.0.0'
+
+supports 'ubuntu'
+
+depends 'apt'
+depends 'build-essential'
+depends 'cpu'
+depends 'erlang'
+depends 'haproxy'
+depends 'python'
+depends 'celery'
+depends 'rabbitmq'
+depends 'supervisor'
+depends 'yum'
+depends 'yum-epel'
+depends 'yum-erlang_solutions'
