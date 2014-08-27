@@ -1,0 +1,26 @@
+{
+  "name": "turbine-web/rabbitmq-cluster",
+  "description": "Vagrant cluster of RabbitMQ and Celery servers",
+  "type": "module",
+  "keywords": [
+    "celery",
+    "rabbitmq",
+    "haproxy"
+  ],
+  "homepage": "https://github.com/turbine-web/rabbitmq-cluster",
+  "require": {
+    "php": ">=5.4",
+    "massivescale/celery-php": "@dev"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:divideandconquer/celery-php.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PhpExample\\": "example/php/lib/"
+    }
+  }
+}

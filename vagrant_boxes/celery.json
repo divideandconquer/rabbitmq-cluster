@@ -1,0 +1,30 @@
+{
+  "box": "ubuntu1204-chef1144",
+  "boxurl": "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vmware/opscode_ubuntu-12.04_chef-provisionerless.box",
+  "recipes": [
+    "apt",
+    "python",
+    "supervisor",
+    "celery"
+  ],
+  "json": {
+    "celery": {
+      "autostart": true,
+      "directory": "/var/celery",
+      "app": "tasks",
+      "workdir": "/var/celery",
+      "include": "celery.task.http",
+      "user": "vagrant",
+      "group": "vagrant",
+      "config": {
+        "rabbit_user": "admin",
+        "rabbit_pass": "admin",
+        "rabbit_host": "proxy",
+        "rabbit_port": 5671,
+        "ca_certs": "/vagrant/ssl/testca/cacert.pem",
+        "keyfile": "/vagrant/ssl/client/key.pem",
+        "certfile": "/vagrant/ssl/client/cert.pem"
+      }
+    }
+  }
+}

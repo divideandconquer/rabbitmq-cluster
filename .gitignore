@@ -1,0 +1,12 @@
+.vagrant/
+.buildpath
+.project
+.idea/
+celery/*.pyc
+celery/config.json
+ssl/*
+!ssl/client/README.md
+!ssl/server/README.md
+!ssl/testca/openssl.cnf
+vendor/
+berks_cookbooks/

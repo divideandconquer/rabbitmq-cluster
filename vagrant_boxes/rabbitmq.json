@@ -1,0 +1,60 @@
+{
+  "box": "ubuntu1204-chef1144",
+  "boxurl": "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vmware/opscode_ubuntu-12.04_chef-provisionerless.box",
+  "recipes": [
+    "rabbitmq",
+    "rabbitmq::mgmt_console",
+    "rabbitmq::plugin_management",
+    "rabbitmq::policy_management",
+    "rabbitmq::user_management"
+  ],
+  "json": {
+    "rabbitmq": {
+      "cluster": true,
+      "cluster_disk_nodes": [],
+      "ssl": true,
+      "ssl_port": 5671,
+      "ssl_cacert": "/vagrant/ssl/testca/cacert.pem",
+      "ssl_cert": "/vagrant/ssl/server/cert.pem",
+      "ssl_key": "/vagrant/ssl/server/key.pem",
+      "ssl_verify": "verify_peer",
+      "ssl_fail_if_no_peer_cert": true,
+      "erlang_cookie": "lbhjfgjlhfdvlkdfnvidsfbvlkplkmihfbsdctgfghjjfcvbjuytresasdfghjk",
+      "policies": {
+        "mirror": {
+          "pattern": ".*",
+          "params": {
+            "ha-mode": "all"
+          },
+          "priority": 100
+        }
+      },
+      "disabled_policies": [
+        "ha-all",
+        "ha-two"
+      ],
+      "enabled_plugins": [
+        "rabbitmq_federation",
+        "rabbitmq_federation_management"
+      ],
+      "disabled_users": [
+        "guest"
+      ],
+      "enabled_users": [
+        {
+          "name": "admin",
+          "password": "admin",
+          "tag": "administrator",
+          "rights": [
+            {
+              "vhost": null,
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
