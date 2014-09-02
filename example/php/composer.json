@@ -20,7 +20,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "PhpExample\\": "example/php/lib/"
+      "PhpExample\\": "lib/"
     }
   }
 }
