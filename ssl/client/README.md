@@ -1,0 +1,2 @@
+Clients certs are generated here.  These certs and keys will need to be used by any clients that connect to the rabbitmq
+cluster on port 5671.  Check out the example folder to see some working clients.
