@@ -1,0 +1,1 @@
+Server certs are generated here.  The rabbitmq vagrant servers automatically use these to enable SSL on AMQP port 5671.
