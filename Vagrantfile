@@ -85,7 +85,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # vagrant trigger to get cookbooks and install them in
   # cookbook path
   [:up, :provision].each do |cmd|
-    if File.exist?("#{cookbook_path}/Berksfile.lock") == true && FileUtils.compare_file('Berksfile.lock', "#{cookbooks_path}/Berksfile.lock2") == false
+    if File.exist?("#{cookbooks_path}/Berksfile.lock") == true && FileUtils.compare_file('Berksfile.lock', "#{cookbooks_path}/Berksfile.lock") == false
       config.trigger.before cmd, :stdout => true do
         info 'Cleaning cookbook directory'
         run "rm -rf #{cookbooks_path}"
